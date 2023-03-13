@@ -192,6 +192,9 @@
 
 @media(max-width:991px){
 
+    form{
+        max-width: 80%;
+    }
 
     .container .card-container .front{
         justify-content: center;
@@ -201,7 +204,7 @@
     }
    
     .container form .inputBox input, .container form .inputBox select{
-        width: 200px;
+        width: 150px;
         height: 50px;
     }
 
