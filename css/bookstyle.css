@@ -75,7 +75,7 @@ h3{
 }
 .order-now form {
 	flex-basis: 100%;
-	margin-top: 60px;
+	margin-top: 20px;
     margin-right: 60px;
     background-color: #FFE9D6 ;
     border:3px solid #212121;
@@ -100,7 +100,7 @@ h3{
     background-color: #FFE9D6 ;
 }
 
-.order-now button[type="submit"] {
+.order-now button {
 	background-color: #FE5722;
 	color: #fff;
 	border: none;
@@ -110,10 +110,23 @@ h3{
 	cursor: pointer;
     margin-left: 160px;
 }
-button a{
-    text-decoration: none;
+ #submit{
+
     background-color: #FE5722;
 	color: #fff;
+}
+.final-button {
+    display: inline-block;
+    text-decoration: none;
+	background-color: #FE5722;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+	font-size: 20px;
+	cursor: pointer;
+    margin-left: 45%;
+    margin-top: 20px;
 }
 
 @media (max-width: 952px) {
@@ -155,5 +168,10 @@ button a{
     h3{
         margin-left: 90px;
         margin-bottom: 20px;
+    }
+    .final-button{
+        font-size: 16px;
+        margin-top: 25px;
+        margin-left: 38%;
     }
 }

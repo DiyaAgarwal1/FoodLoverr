@@ -38,9 +38,93 @@
 				<label for="order">Order:</label>
 				<textarea id="order" name="order" rows="4" placeholder="Enter your order details"></textarea>
 
-				<button type="submit"><a href="payment.html"> Proceed to Pay </a></button>
+				<button id="submit" type="button"> Submit </button>
 			</form>
 		</section>
+		<div>
+		<a class="final-button" href="payment.html">Proceed to pay </a>
+	</div>
 	</main>
+
+
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		   
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+		import { getDatabase,set,ref } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+		import { getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+	   
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	
+	
+		// BACKEND CHANGES
+		
+		const firebaseConfig = {
+		apiKey: "AIzaSyAWdSRCpbsjp2hMEp4Q7EQXUhnLAYxeieQ",
+		authDomain: "foodloverr-2458a.firebaseapp.com",
+		databaseURL: "https://foodloverr-2458a-default-rtdb.firebaseio.com",
+		projectId: "foodloverr-2458a",
+		storageBucket: "foodloverr-2458a.appspot.com",
+		messagingSenderId: "316523770590",
+		appId: "1:316523770590:web:f2b3da3d8a61692c19484f",
+		measurementId: "G-MKNTBCVXWK"
+	  };
+		
+		 
+		
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		
+	  
+		// Initialize Firebase
+		
+		
+	 const db=getDatabase();
+	   var name=document.getElementById('name');
+	   var email=document.getElementById('email');
+	   var mobile=document.getElementById('mobile');
+	   var location=document.getElementById('location');
+	   var order=document.getElementById('order');
+	   var button=document.getElementById('submit');
+	   
+	
+	   function data(){
+		
+		set(ref(db,'Booking/'+name.value),{
+			
+			name:name.value,
+			email:email.value,
+			mobile:mobile.value,
+			location:location.value,
+			order:order.value,
+		   
+	
+		})
+	    .then(()=>{
+	        alert("Your Booking Has Been Confirmed")
+	    })
+	  .catch(()=>{
+	    alert(error)
+		// window.location.href="payment.html"
+	  })
+		  }
+		 
+	button.addEventListener('click',data)
+	  
+	  </script>
+
+
+
 </body>
 </html>

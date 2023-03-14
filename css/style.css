@@ -106,6 +106,17 @@ nav ul li a {
 .menu a:hover {
   border-bottom: 2px solid var(--clr-primary);
   transition: 0.3s;
+  color: #FE5722;
+}
+a.front-end{
+background-color: #F7B267;
+border-radius: 25px;
+padding: 10px 20px;
+}
+a.front-end:hover {
+  border-bottom: 2px solid var(--clr-primary);
+  transition: 0.3s;
+  color: white;
 }
 
 .checkbtn {
